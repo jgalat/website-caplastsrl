@@ -1,0 +1,370 @@
+---
+---
+@charset "utf-8";
+
+$base-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-font-weight: 400;
+$base-line-height: 1;
+
+$base-radius:      .3rem;
+
+$text-color:       #111;
+
+$primary-color:    #336;
+$primary-color-light: lighten($primary-color, 5%);
+$primary-color-dark: darken($primary-color, 10%);
+
+$white-color:      #fff;
+$white-color-dark: darken($white-color, 20%);
+$grey-color:       #7f8c8d;
+$grey-color-light: lighten($grey-color, 20%);
+$grey-color-dark:  darken($grey-color, 20%);
+
+$content-width:    800px;
+
+$on-cellphone:     543px;
+$on-tablet:        767px;
+$on-pc:            991px;
+
+ @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.7em;
+  color: $grey-color-dark;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: #336;
+}
+
+nav {
+  background-color: $primary-color;
+  padding: .2em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 4;
+  border-bottom: none;
+  line-height: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .right-side {
+    padding-right: .5rem;
+
+    .pure-button-primary {
+      color: $primary-color;
+      background-color: $white-color;
+    }
+  }
+
+  .pure-menu-list {
+    color: $white-color;
+
+    .pure-menu-item {
+      border-radius: $base-radius;
+
+      .pure-menu-link {
+        color: $white-color-dark;
+      }
+
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background: none;
+        border: none;
+        color: inherit;
+        transition: color .7s;
+      }
+    }
+
+    .pure-menu-item:hover,
+    .pure-menu-item:focus {
+      background-color: $primary-color-light;
+      transition: background-color .7s;
+    }
+  }
+
+  .logo-sm {
+    height: 2rem;
+  }
+}
+
+a,
+a:visited {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $primary-color-light;
+  transition: color .7s;
+}
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.ribbon-img {
+  border-radius: $base-radius;
+  width: 75%;
+}
+
+.animation-hidden {
+  opacity: 0;
+}
+
+.animation-visible {
+  opacity: 1;
+}
+
+.subpage {
+  max-width: $content-width;
+  margin: 1rem auto;
+  margin-bottom: 3rem;
+}
+
+.subpage-2 {
+  max-width: $content-width * 1.25;
+  margin: 1rem auto;
+}
+
+.header-1 {
+  background: url("../images/factory1.jpg");
+  background-size: cover;
+  background-position: 0 40%;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  min-height: 50%;
+  position: fixed !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 2rem;
+  margin-top: 1rem;
+
+  .header-head {
+    color: $white-color;
+    text-shadow: 0 3px 6px rgba(0,0,0, 0.35);
+    font-size: 4rem;
+    line-height: $base-line-height;
+  }
+}
+
+
+.l-box {
+  padding: 1em;
+}
+
+.l-box-lrg {
+  padding: 2em;
+}
+
+.h-center {
+  text-align: center;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.all-height {
+  min-height: 100%;
+}
+
+.pure-form {
+  label {
+    margin: 1em 0 0;
+    font-weight: bold;
+  }
+
+  input[type],
+  textarea {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+.pure-button {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 0.5em 2em;
+  border-radius: $base-radius;
+}
+
+.landing-container {
+  background: url("../images/landing.jpg");
+  background-size: cover;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+  position: fixed !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 1rem;
+  margin-top: 1rem;
+}
+
+.caplast-lg {
+  margin-top: 4rem;
+}
+
+.content-wrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  min-height: 12%;
+  z-index: 2;
+  background: $white-color;
+}
+
+.content-wrapper-subpages {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  min-height: 12%;
+  z-index: 2;
+  background: $white-color;
+}
+
+.content {
+  padding: 1em;
+}
+
+.content-head {
+  font-weight: $base-font-weight;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1.5em 0 .5em 0;
+}
+
+.content-head-ribbon {
+  color: $white-color;
+}
+
+.content-subhead {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0;
+
+  i {
+    margin-right: .5rem;
+  }
+}
+
+.ribbon {
+  background: $primary-color-dark;
+  color: $grey-color-light;
+}
+
+.news-post {
+  margin: 2rem 0;
+
+  .source {
+    font-size: $small-font-size;
+    color: $grey-color;
+  }
+  .video-2 {
+    padding: 0 1rem;
+  }
+}
+
+.footer {
+  background: $text-color;
+  color: $grey-color-light;
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.hidden-sm {
+  display: inline-block;
+}
+
+@media only screen and (max-width : $on-tablet) {
+  .v-center {
+    display: block;
+  }
+
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media only screen and (max-width : $on-cellphone) {
+  .landing-container {
+    background-position: 46% 0;
+    padding: 0;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .header {
+    background-size: 200%;
+    background-position: 46% 0;
+  }
+}
