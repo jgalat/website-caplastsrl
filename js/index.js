@@ -2,8 +2,27 @@ $(function () {
 
   var nav = $('nav').find('.left-side'),
       menuLinks = nav.find('a'),
-      navOuterHeight = nav.outerHeight() / 2.5;
+      navOuterHeight = nav.outerHeight() ;
 
+  var animateScroll = function (hash) {
+    var offsetTop = 0;
+
+    if (hash !== "#") {
+      var $hash = $(hash);
+      if ($hash.length > 0) {
+        offsetTop = $hash.offset().top - navOuterHeight;
+      }
+    }
+
+    $('html, body')
+      .stop()
+      .animate({ scrollTop: offsetTop }, 500);
+  };
+
+  /* scroll to the top */
+  window.scrollTo(0, 0);
+  /* animate scroll */
+  animateScroll(window.location.hash);
 
   menuLinks.click(function (evnt) {
     var regex = new RegExp("(#[a-z\-]*)", "gi"),
@@ -11,14 +30,8 @@ $(function () {
 
     if (href) {
       evnt.preventDefault();
-
-      var offsetTop = href === "#" ? 0 : $(href).offset().top-navOuterHeight;
-
-      $('html, body')
-        .stop()
-        .animate({ scrollTop: offsetTop }, 500);
+      animateScroll(href);
     }
-
   });
 
   $("#about-us").find('.info').viewportChecker({
