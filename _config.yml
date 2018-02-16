@@ -20,4 +20,4 @@ url: "https://www.caplast.com.ar" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-exclude: [pure-0.6.0]
+exclude: []
